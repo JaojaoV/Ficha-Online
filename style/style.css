@@ -1,0 +1,134 @@
+:root{
+--cor_detalhes: #641f1f;
+--porcento_vida: 100%  ;
+--cor_vida: green;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+
+    background-color: #313131;
+    width: 100%;
+}
+.topo{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;    
+}
+.imagem{
+    display: flex;
+    z-index: 2;
+}
+#foto{
+    display: none;
+}
+#fotolabel{
+    width: 150px;
+    height: 150px;
+    background-color: #555555;
+    border: 5px ridge var(--cor_detalhes);
+    border-radius: 100px;
+}
+.titulos{
+    width: 100%;
+}
+.titulos input{
+    background-color: transparent;
+    border: none;
+    /* border-bottom: 3px solid var(--cor_detalhes); */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+}
+.titulos select{
+    margin-top: 10px;
+    background-color: #ffffff00;
+    border: none;
+    /* border-bottom: 3px solid var(--cor_detalhes); */
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: bold;
+    width: 100%;
+}
+select option{
+    background-color: #313131;
+    color: white;
+}
+.titulos hr{
+    border: 2px solid var(--cor_detalhes);
+    margin-top: 2px;
+    margin-left: -40px;
+    z-index: 1;
+}
+#nivel{
+    position: absolute;
+    top: 150px;
+    border: none;
+    height: 35px;
+    width: 10%;
+    z-index: 3;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #0e0e0eb9;
+    color: white;
+}
+
+.total{
+    background-color: #555555;
+    height: 50px;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.preencher_vida{
+    position: absolute;
+    background-color: var(--cor_vida);
+    height: 100%;
+    transition: width 0.4s ease;
+    width: var(--porcento_vida);
+    z-index: 1;
+}
+
+.total p{
+
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    z-index: 2;
+}
+.dentro_barra{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+.dentro_barra input{
+    width: 100px;
+    text-align: center;
+    border: none;
+    font-size: 30px;
+    background-color: transparent;
+}

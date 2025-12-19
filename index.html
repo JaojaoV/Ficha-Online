@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha Online</title>
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body>
+    <form action="">
+        <div class="topo">
+            <div class="imagem">
+                <label id="fotolabel" for="foto"></label>
+                <input id="foto" type="file" id="imageInput" accept="image/png, image/jpeg, image/gif" />
+            </div>
+            <div class="titulos">
+                <input type="text" placeholder="Nome">
+
+
+                <hr>
+                <select name="classe" placeholder="Classe" id="classe">
+                    <option value="" disabled selected>Classe</option>
+                    <option value="soldado">Soldado</option>
+                    <option value="barbaro">Barbaro</option>
+                    <option value="ladino">Ladino</option>
+                    <option value="pistoleiro">Pistoleiro</option>
+                    <option value="invocador">Invocador</option>
+                    <option value="arcano">Arcano</option>
+                    <option value="espadachim">Espadachim</option>
+                </select>
+                <hr>
+                <select name="Raça" id="raca">
+                    <option value="" disabled selected>Raça</option>
+                    <option value="driade">Driade</option>
+                    <option value="elfo">Elfo</option>
+                    <option value="anão">Anão</option>
+                    <option value="gigante">Gigante</option>
+                    <option value="fada">Fada</option>
+
+                </select>
+                <hr>
+            </div>
+
+        </div>
+        <input id="nivel" name="nivel" type="number" placeholder="Nv" min="0">
+
+        <div class="pontos">
+            <p>Pontos de Vida</p>
+
+            <div class="total">
+                <div class="preencher_vida"></div>
+                    <div class="dentro_barra"> 
+                         <input name="pv_atual" id="pv_atual" type="number" placeholder="Pontos de Vida atuais" min="0">
+                         <h1>/</h1>
+                        <input name="pv_total" id="pv_total" type="number" placeholder="Pontos de Vida totais">
+                       
+                </div>
+            </div>
+            <button type="button" onclick="alterarValor(-1)">-</button>
+            <button type="button" onclick="alterarValor(1)">+</button>
+        </div>
+    </form>
+
+
+    <script src="/script/script.js"></script>
+</body>
+
+</html>
