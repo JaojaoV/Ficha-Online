@@ -11,6 +11,7 @@
 
 <body>
     <form action="">
+        <input id="dinheiro" name="dinheiro" type="text">
         <div class="topo">
             <div class="imagem">
                 <label id="fotolabel" for="foto"></label>
@@ -49,18 +50,40 @@
 
         <div class="pontos">
             <p>Pontos de Vida</p>
+            <div class="pv">
+                <button class="botao_vida" id="aumentar_vida" type="button" onclick="alterarValorPV(-1)">-</button>
+                <div class="total">
+                    <div class="preencher_vida"></div>
+                    <div class="dentro_barra">
+                        <input name="pv_atual" id="pv_atual" type="number" placeholder="Atual" min="0">
+                        <h1>/</h1>
+                        <input name="pv_total" id="pv_total" type="number" placeholder="Total" min="1">
 
-            <div class="total">
-                <div class="preencher_vida"></div>
-                    <div class="dentro_barra"> 
-                         <input name="pv_atual" id="pv_atual" type="number" placeholder="Pontos de Vida atuais" min="0">
-                         <h1>/</h1>
-                        <input name="pv_total" id="pv_total" type="number" placeholder="Pontos de Vida totais">
-                       
+                    </div>
                 </div>
+                <button class="botao_vida" id="diminuir_vida" type="button" onclick="alterarValorPV(1)">+</button>
+
             </div>
-            <button type="button" onclick="alterarValor(-1)">-</button>
-            <button type="button" onclick="alterarValor(1)">+</button>
+            
+            <p>Pontos de Sanidade</p>
+            <div class="sanidade">
+                <button class="botao_sanidade" id="aumentar_sanidade" type="button" onclick="alterarValorSAN(-1)">-</button>
+                <div class="total">
+                    <div class="preencher_sanidade"></div>
+                    <div class="dentro_barra">
+                        <input name="san_atual" id="san_atual" type="number" placeholder="Atual" min="0">
+                        <h1>/</h1>
+                        <input name="san_total" id="san_total" type="number" placeholder="Total" min="1">
+
+                    </div>
+                </div>
+                <button class="botao_vida" id="diminuir_vida" type="button" onclick="alterarValorSAN(1)">+</button>
+
+            </div>
+            
+
+
+
         </div>
     </form>
 

@@ -2,6 +2,8 @@
 --cor_detalhes: #641f1f;
 --porcento_vida: 100%  ;
 --cor_vida: green;
+--porcento_sanidade: 100%;
+--cor_sanidade: rgb(84, 84, 170);
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
@@ -11,6 +13,13 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
   appearance: textfield;
+}
+input::placeholder{
+    color: white;
+    opacity: 0.7;
+}
+input:focus{
+    outline: none;
 }
 *{
     margin: 0;
@@ -23,6 +32,22 @@ body{
     background-color: #313131;
     width: 100%;
 }
+#dinheiro{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 120px;
+    height: 40px;
+
+    border-radius: 0px 0px 20px 20px;
+    border: solid 5px rgb(240, 203, 42);
+    color: rgb(240, 203, 42);
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+}
+
 .topo{
     margin-top: 40px;
     display: flex;
@@ -90,7 +115,9 @@ select option{
 }
 
 .total{
-    background-color: #555555;
+
+    border: solid 2px white;
+    color: white;
     height: 50px;
     width: 80%;
     position: relative;
@@ -131,4 +158,66 @@ select option{
     border: none;
     font-size: 30px;
     background-color: transparent;
+    color: white;
+}
+
+.botao_vida{
+    width: 30px;
+    height: 30px;
+
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pv{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.pontos{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pontos p{
+    color: white;
+    font-size: 15px;
+    
+}
+
+.sanidade{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.botao_sanidade{
+    width: 30px;
+    height: 30px;
+
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.preencher_sanidade{
+    position: absolute;
+    background-color: var(--cor_sanidade);
+    height: 100%;
+    transition: width 0.4s ease;
+    width: var(--porcento_sanidade);
+    z-index: 1;
 }
