@@ -12,6 +12,7 @@
 <body>
     <form action="">
         <input id="dinheiro" name="dinheiro" type="text">
+        
         <div class="topo">
             <div class="imagem">
                 <label id="fotolabel" for="foto"></label>
@@ -48,6 +49,9 @@
         </div>
         <input id="nivel" name="nivel" type="number" placeholder="Nv" min="0">
 
+            <input id="ca" name="ca" type="number" placeholder="CA" min="0">
+
+        
         <div class="pontos">
             <p>Pontos de Vida</p>
             <div class="pv">
@@ -80,11 +84,60 @@
                 <button class="botao_vida" id="diminuir_vida" type="button" onclick="alterarValorSAN(1)">+</button>
 
             </div>
+            <p><input id="nome_contagem" placeholder="Contagem" type="text"></p>
+            <div class="contagem">
+                <button class="botao_contagem" id="aumentar_contagem" type="button" onclick="alterarValorContagem(-1)">-</button>
+                <div class="total">
+                    <div class="preencher_contagem"></div>
+                    <div class="dentro_barra">
+                        <input name="contagem_atual" id="contagem_atual" type="number" placeholder="Atual" min="0">
+                        <h1>/</h1>
+                        <input name="contagem_total" id="contagem_total" type="number" placeholder="Total" min="1">
+                    </div>
+                </div>
+                <button class="botao_contagem" id="diminuir_contagem" type="button" onclick="alterarValorContagem(1)">+</button>
+            </div>
             
 
 
 
         </div>
+
+        <div class="atributos">
+            <div class="atributo" id="forca">
+                <label for="forca">FOR</label>
+                <input class="mod" id="forca_mod" name="forca" type="text" min="0">
+                <input class="pnt" id="forca_pnt" name="forca" type="number" min="0">
+            </div>
+            <div class="atributo" id="destreza">
+                <label for="destreza">DES</label>
+                <input class="mod" id="destreza_mod" name="destreza" type="text" min="0">
+                <input class="pnt" id="destreza_pnt" name="destreza" type="number" min="0">
+            </div>
+            <div class="atributo" id="carisma">
+                <label for="carisma">CAR</label>
+                <input class="mod" id="carisma_mod" name="carisma" type="text" min="0">
+                <input class="pnt" id="carisma_pnt" name="carisma" type="number" min="0">
+            </div>
+            <div class="atributo" id="fe">
+                <label for="fe">Fé</label>
+                <input class="mod" id="fe_mod" name="fe" type="text" min="0">
+                <input class="pnt" id="fe_pnt" name="fe" type="number" min="0">
+            </div>
+            <div class="atributo" id="constituicao">
+                <label for="constituicao">CON</label>
+                <input class="mod" id="constituicao_mod" name="constituicao" type="text" min="0">
+                <input class="pnt" id="constituicao_pnt" name="constituicao" type="number" min="0">
+            </div>
+            <div class="atributo" id="inteligencia">
+                <label for="inteligencia">INT</label>
+                <input class="mod" id="inteligencia_mod" name="inteligencia" type="text" min="0">
+                <input class="pnt" id="inteligencia_pnt" name="inteligencia" type="number" min="0">
+            </div>
+            
+            
+        </div>
+
     </form>
 
 

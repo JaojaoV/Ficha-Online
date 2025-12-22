@@ -4,6 +4,7 @@
 --cor_vida: green;
 --porcento_sanidade: 100%;
 --cor_sanidade: rgb(84, 84, 170);
+--porcento_contagem: %;
 }
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
@@ -103,7 +104,7 @@ select option{
 }
 #nivel{
     position: absolute;
-    top: 150px;
+    top: 50px;
     border: none;
     height: 35px;
     width: 10%;
@@ -191,6 +192,8 @@ select option{
 .pontos p{
     color: white;
     font-size: 15px;
+
+    margin-top: 10px;
     
 }
 
@@ -221,3 +224,89 @@ select option{
     width: var(--porcento_sanidade);
     z-index: 1;
 }
+
+#ca{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 155px;
+    left: 45px;
+    z-index: 3;
+
+    background-image: url('/img/escudo.svg');
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    text-align: center;    
+    color: white;
+    font-size: 20px;
+    border: none;
+}
+
+.contagem{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.botao_contagem{
+    width: 30px;
+    height: 30px;
+
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#nome_contagem{
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    color: white;
+
+}
+.preencher_contagem{
+    position: absolute;
+    background-color: var(--cor_detalhes);
+    height: 100%;
+    transition: width 0.4s ease;
+    width: var(--porcento_contagem);
+    z-index: 1;
+}
+.atributos{
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    
+}
+.atributo{
+width: 90px;
+height: 90px;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.mod{
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: -20px;
+    z-index: -1;
+}
+.pnt{
+    width: 60%;
+    height: 30%;
+    border-radius: 20px;
+    margin-top: -30%;
+    text-align: center;
+}
+
