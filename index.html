@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="">
+    <form id="ficha">
         <input id="dinheiro" name="dinheiro" type="text">
         
         <div class="topo">
@@ -48,6 +48,7 @@
 
         </div>
         <input id="nivel" name="nivel" type="number" placeholder="Nv" min="0">
+
 
             <input id="ca" name="ca" type="number" placeholder="CA" min="0">
 
@@ -137,7 +138,45 @@
             
             
         </div>
+        <div class="habilidades">
+            <h1>Habilidades e Ataques</h1>
+            <div class="lista_habilidades">
+                <table class="tabela_habilidades">
+                    <tr>
+                        <th>Nome</th>
+                        <th>Dano</th>
+                        <th>Bonûs</th>
+                        <th>Custo</th>
 
+                    </tr>
+                    <tr class="habilidade" id="habilidade_um" >
+                        <td><input class="nome_habilidade" type="text"></td>
+                        <td><input class="dano_habilidade" type="text"></td>
+                        <td><input class="bonus_habilidade" type="number"></td>
+                        <td><input class="custo_habilidade" type="text"></td>
+                        
+                    </tr>
+                    <tr class="habilidade" id="habilidade_dois" >
+                        <td><input class="nome_habilidade" type="text"></td>
+                        <td><input class="dano_habilidade" type="text"></td>
+                        <td><input class="bonus_habilidade" type="number"></td>
+                        <td><input class="custo_habilidade" type="text"></td>
+                    </tr>
+                    <tr class="habilidade" id="habilidade_tres" >
+                        <td><input class="nome_habilidade" type="text"></td>
+                        <td><input class="dano_habilidade" type="text"></td>
+                        <td><input class="bonus_habilidade" type="number"></td>
+                        <td><input class="custo_habilidade" type="text"></td>
+                    </tr>
+                    <tr class="habilidade" id="habilidade_quatro" >
+                        <td><input class="nome_habilidade" type="text"></td>
+                        <td><input class="dano_habilidade" type="text"></td>
+                        <td><input class="bonus_habilidade" type="number"></td>
+                        <td><input class="custo_habilidade" type="text"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </form>
 
 

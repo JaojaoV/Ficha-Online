@@ -7,6 +7,12 @@ let contagem_atual = document.querySelector('#contagem_atual');
 let atributo_pnt = document.querySelectorAll('.pnt');
 let classe = document.querySelector('#classe');
 let contagem_nome = document.querySelector('#nome_contagem');
+let ca = document.querySelector('#ca');
+let ficha = document.querySelector('#ficha');
+let foto = document.querySelector('#foto');
+let fotolabel = document.querySelector('#fotolabel');
+let habilidades = document.querySelector('.habilidades');
+
 
 
 //funções para atualizar os valores
@@ -38,6 +44,7 @@ document.querySelector('#pv_atual').setAttribute('max', pv_total.value);
     }else if (porcentagem > 50) {
         root.style.setProperty('--cor_vida', 'green');
     }
+    saveData();
 }
 
 function atualizarsanidade(){
@@ -51,6 +58,7 @@ document.querySelector('#san_atual').setAttribute('max', san_total.value);
         root.style.setProperty('--cor_sanidade', '#5454AA');
     }
     console.log(porcentagem);
+    saveData();
 }
 
 function atualizarcontagem(){
@@ -58,9 +66,25 @@ document.querySelector('#contagem_atual').setAttribute('max', contagem_total.val
     let porcentagem = (contagem_atual.value / contagem_total.value) * 100;
     let root = document.documentElement;
     root.style.setProperty('--porcento_contagem', `${porcentagem}%`);
+    saveData();
 }
 
+
+foto.addEventListener('change', (event) => {
+    let reader = new FileReader();
+    reader.onload = () => {
+        fotolabel.style.backgroundImage = `url(${reader.result})`;
+        saveData();
+    }
+    reader.readAsDataURL(foto.files[0]);
+});
+
+
 //adiciona gatilhos nos input para atualizar os valores das barras
+
+ficha.addEventListener('input', (event) => {
+    saveData();
+});
 
 pv_total.addEventListener('input', (event) => {
     atualizarvida();
@@ -111,5 +135,70 @@ classe.addEventListener('change', (event) => {
     console.log(classe.value);
 if (classe.value == 'espadachim'){
     contagem_nome.value = 'Postura';
+    contagem_total.value = 20;
 }
 });
+
+//se classe igual arcano contagem 1 igual a Pontos de Mana
+classe.addEventListener('change', (event) => {
+    console.log(classe.value);
+if (classe.value == 'arcano'){
+    contagem_nome.value = 'Pontos de Mana';
+}
+});
+
+// Salvar e carregar dados do localStorage
+function saveData() {
+    const formData = {
+      ca: ca.value,
+      pv_total: pv_total.value,
+      pv_atual: pv_atual.value,
+      san_total: san_total.value,
+      san_atual: san_atual.value,
+      contagem_total: contagem_total.value,
+      contagem_atual: contagem_atual.value,
+      classe: classe.value,
+      contagem_nome: contagem_nome.value,
+      atributos: {},
+      foto: fotolabel.style.backgroundImage
+    };
+
+    atributo_pnt.forEach(element => {
+        formData.atributos[element.getAttribute('name')] = element.value;
+      });
+      localStorage.setItem('formData', JSON.stringify(formData));
+    
+}
+
+
+function loadData() {
+    const savedData = localStorage.getItem('formData');
+    if (savedData) {
+      const formData = JSON.parse(savedData);
+      ca.value = formData.ca;
+      pv_total.value = formData.pv_total;
+      pv_atual.value = formData.pv_atual;
+      san_total.value = formData.san_total;
+      san_atual.value = formData.san_atual;
+      contagem_total.value = formData.contagem_total;
+      contagem_atual.value = formData.contagem_atual;
+      classe.value = formData.classe;
+      contagem_nome.value = formData.contagem_nome;
+      if (formData.foto) {
+        fotolabel.style.backgroundImage = formData.foto;
+      }
+      for (const name in formData.atributos) {
+        const element = document.querySelector(`.pnt[name="${name}"]`);
+        if (element) {
+          element.value = formData.atributos[name];
+          calcularmod(element);
+        }
+      }
+      atualizarvida();
+      atualizarsanidade();
+      atualizarcontagem();
+    }
+  }
+
+  
+window.addEventListener('load', loadData);
